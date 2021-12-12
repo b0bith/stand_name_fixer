@@ -5,11 +5,27 @@
 
 import sys
 
-if len(sys.argv) is not 2:
+if len(sys.argv) != 2:
     print('Usage: python3 stand_name_fixer.py "SUBTITLE_FILE"')
     sys.exit(0)
 
 # Localization : Acutal name
+part_6 = {
+'Stone Ocean' : 'Stone Free',
+'Smack' : 'KIϟϟ',
+'F.F.' : 'Foo Fighters',
+'Weather Forecast' : 'Weather Report',
+'G.G. Dolls' : 'Goo Goo Dolls',
+'Downtown Transfer' : 'Manhattan Transfer',
+'Pale Snake' : 'Whitesnake',
+'Freeway Thru Hell' : 'Highway to Hell',
+'Narciso Anastasia' : 'Narciso Anasui', # Not a stand, but why localize?
+'Diver Drive' : 'Diver Down',
+'Mary Lynn Manson' : 'Marilyn Manson',
+'Savage Guardian' : 'Savage Garden',
+'Jumpin\' Jack Spark' : 'Jumpin\' Jack Flash',
+'Sports Maximum' : 'Sports Maxx',
+}
 
 part_4 = {
 'Heart Father' : 'Atom Heart Father',
@@ -61,7 +77,7 @@ subtitle_file = sys.argv[1]
 with open(subtitle_file, 'r') as infile:
     subs = infile.read()
 
-for localization, original in stand_names.items():
+for localization, original in part_6.items():
     subs = subs.replace(localization, original)
 
 with open(subtitle_file, 'w') as outfile:

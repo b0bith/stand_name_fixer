@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # stand_name_fixer.sh
 # Uses mkvtoolnix and another script to replace
 # stand names in mkv files of JoJo's Bizzare Adventure
 
 # Extract subtitles from mkv
-echo $1
+echo "$1"
 mkvextract tracks "$1" 2:"$1.srt"
 
 # Fix subtitles

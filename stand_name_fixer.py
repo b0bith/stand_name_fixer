@@ -5,7 +5,7 @@
 
 import sys
 
-if len(sys.argv) is not 2:
+if len(sys.argv) != 2:
     print('Usage: python3 stand_name_fixer.py "SUBTITLE_FILE"')
     sys.exit(0)
 
@@ -77,7 +77,7 @@ subtitle_file = sys.argv[1]
 with open(subtitle_file, 'r') as infile:
     subs = infile.read()
 
-for localization, original in stand_names.items():
+for localization, original in part_6.items():
     subs = subs.replace(localization, original)
 
 with open(subtitle_file, 'w') as outfile:
